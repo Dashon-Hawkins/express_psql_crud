@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  if movie
+    div.well.well-lg
+      h1= movie.title
+      h3= movie.director
+      p Rating: #{movie.rating}
+      p= movie.description
+      p
+        a.btn-link(href='/movie/edit/#{movie.id}') Edit
+        form(action='/movie/delete/#{movie.id}' method='POST')
+          input.btn.btn-link(type='submit' value='Delete')

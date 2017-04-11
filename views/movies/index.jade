@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+
+  h1 Showing All Movies
+
+
+  if movies
+    table.table.table-striped
+     thead
+       tr
+         th Director
+         th Title
+         th Rating
+         th Description
+     tbody
+       for movie in movies
+         tr
+           td= movie.director
+           td
+             a(href='/movie/#{movie.id}')= movie.title
+           td= movie.rating
+           td= movie.description
+
+
+   div
+   a(href='/movie/new') Add a Movie

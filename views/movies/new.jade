@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+
+  div.container
+    h1 Add a New Movie
+    form(method="POST" action="/movies")
+      div.form-group
+        label(for="director") Director
+        input.form-control(type="text" id="director" name='director' placeholder="Director")
+      div.form-group
+        label(for="title") Title
+        input.form-control(type="text" id="title" name='title' placeholder="Title")
+      div.form-group
+          label Rate this movie
+          p
+            input(type="radio" name="rating" value="1" checked)
+            one 1 (Lame)
+      div.form-group
+        input(type="radio" name="rating" value="2")
+        two 2
+      div.form-group
+        input(type="radio" name="rating" value="3")
+        three 3
+      div.form-group
+        input(type="radio" name="rating" value="4")
+        four 4 (Awesome)
+      div.form-group
+        label(for="description") Description
+        textarea.form-control(rows="5" id='description' name='description' placeholder="Keep it brief")
+      button.btn.btn-primary(type="submit") Submit
